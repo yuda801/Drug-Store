@@ -5,6 +5,8 @@ import { Toolbar } from '@mui/material';
 import { Typography } from '@mui/material';
 import { Button } from '@mui/material';
 import { IconButton } from '@mui/material';
+import { Link } from "react-router-dom"
+
 
 const Navbar = () => {
     return (
@@ -19,10 +21,23 @@ const Navbar = () => {
                         sx={{ mr: 2 }}
                     >
                     </IconButton>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                    <Button color="inherit" variant="outlined">
+                        <Link to="/">Home</Link>
+                    </Button>
+
+                    <Typography variant="h6"
+                        component="div"
+                        sx={{ flexGrow: 1 }
+                        }>
                         All About Medicines!
                     </Typography>
-                    <Button color="inherit">Add Medicine</Button>
+
+                    <Button color="inherit" variant="outlined">
+                        <Link to="/medicins">Medicins List</Link>
+                    </Button>
+                    <Button color="inherit" variant="outlined">
+                        <Link to="/add-medicins">Add Medicins</Link>
+                    </Button>
                 </Toolbar>
             </AppBar>
         </Box>

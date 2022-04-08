@@ -2,6 +2,7 @@ import './App.css';
 import Home from './components/Home.js';
 import Navbar from './components/Navbar.js';
 import Meds from './components/Meds.js';
+import AddMedicin from './components/AddMedicin.js';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from 'react';
 
@@ -37,8 +38,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home companies={companies} />} />
           <Route path="/medicins" element={<Meds medicines={medicines} />} />
-          {/* <Route path="/about" element={<About />} /> */}
-          {/* <Route path="*" element={<Home />} /> */}
+          <Route path="/add-medicins" element={<AddMedicin medicines={medicines} />} />
         </Routes>
 
       </BrowserRouter>
