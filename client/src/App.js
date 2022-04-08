@@ -1,13 +1,14 @@
 import './App.css';
 import Home from './components/Home.js';
 import Navbar from './components/Navbar.js';
+import Meds from './components/Meds.js';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from 'react';
 
 function App() {
 
   const [companies, setCompanies] = useState([]);
-  // const [companiesAPI, setCompaniesAPI] = useState([]);
+  const [medicines, setMedicines] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:5000/api/medicins-compenies')
@@ -19,11 +20,11 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/medicines')
+    fetch('http://localhost:5000/api/medicins')
       .then(res => res.json())
       .then(data => {
         console.log(data)
-        setCompanies(data.data);
+        setMedicines(data.data);
       })
   }, []);
 
@@ -35,9 +36,11 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home companies={companies} />} />
+          <Route path="/medicins" element={<Meds medicines={medicines} />} />
           {/* <Route path="/about" element={<About />} /> */}
           {/* <Route path="*" element={<Home />} /> */}
         </Routes>
+
       </BrowserRouter>
 
     </div>
