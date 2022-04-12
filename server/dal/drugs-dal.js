@@ -76,27 +76,3 @@ export default {
     addMedicin,
     deleteMedicins
 }
-// addCustomer,
-// deleteCustomer
-
-// const deleteCustomer = async (id) => {
-//     let result = {
-//         success: false,
-//         data: null
-//     }
-    
-//     try {
-//         let res = await connection.promise().query(
-//             `DELETE FROM customers WHERE id = ${id};`
-//             )
-            
-//             result.success = true
-            
-//             return result
-//         } catch (err) {
-//         result.success = false
-//         result.data = err
-        
-//         return result
-//     }
-// }
